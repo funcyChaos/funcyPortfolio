@@ -1,0 +1,1 @@
+document.getElementById('logo_left').addEventListener('contextmenu', event=>event.preventDefault())
