@@ -11,15 +11,19 @@
 	background-color: black;
 	color: white;
 
-	height: 100vh;
+	display: flex;
+	flex-direction: column;
 
 	.header{
 
 		display: grid;
 
+		height: 210px;
+
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: auto;
+		grid-template-rows: 1fr;
 		grid-template-areas: "left mid right";
+
 
 		color: #bbb;
 
@@ -41,19 +45,75 @@
 
 			img{
 	
-				height: 100px;
+				height: 170px;
 			}
 		}
 
 		.mid{
 
 			grid-area: mid;
+			font-size: xx-large;
 		}
 
 		.right{
 
 			grid-area: right;
 			.fa-lg{font-size: xx-large;}
+		}
+	}
+
+	.content{
+
+		display: grid;
+
+		height: auto;
+
+		flex: 1 0 auto;
+
+		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 1fr;
+
+		grid-template-areas: "left right";
+
+		padding: 20px 0;
+
+		.left{
+
+			grid-area: left;
+			
+			display: flex;
+			justify-content: center;
+
+			.text-wrapper{
+
+				margin: 2rem 0;
+				h3{margin-bottom: .8rem;}
+			}
+		}
+
+		.right{
+
+			grid-area: right;
+
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			h3{margin-bottom: .8rem;}
+
+			a{
+
+				color: white;
+				text-decoration: none;
+				margin-bottom: 1rem;
+			}
+
+			.img-wrapper{
+
+				height: 70%;
+
+				img{height: 100%;}
+			}
 		}
 	}
 }
