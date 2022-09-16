@@ -97,12 +97,16 @@
 			grid-area: right;
 
 			display: flex;
-
+			
 			.left-column{
 
+				$column_transition: .25s;
+				
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
+				
+				transition: $column_transition;
 
 				width: 80%;		
 				
@@ -121,6 +125,12 @@
 					}
 				}
 			}
-		}
+			
+			#slide_2{
+
+				display: none;
+				opacity: 0;
+			}
+		}		
 	}
 }
