@@ -9,7 +9,7 @@ slide1.addEventListener('transitionstart', ()=>{
 	setTimeout(() => {
 		
 		slide1.style.display = 'none';
-		slide2.style.display = 'flex';
+		slide2.style.display = 'grid';
 
 		setTimeout(() => {
 			
