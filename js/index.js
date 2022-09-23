@@ -18,15 +18,18 @@ function changeSlide(slideNum){
 	const transition 		= 100;
 	const currentSlide	= document.getElementById(`slide_${currentSlideNum}`);
 	const currentBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+	if((slideNum + 1) === currentSlideNum)return;
 	
-	currentSlide.style.opacity = 0;
-
+	
+	
 	switch (slideNum){
 		case '++':
+			if((currentSlideNum + 1) > 3)return;
 			newSlide				= document.getElementById(`slide_${++currentSlideNum}`);
 			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
 			break;
 		case '--':
+			if((currentSlideNum - 1) < 1)return;
 			newSlide				= document.getElementById(`slide_${--currentSlideNum}`);
 			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
 			break;
@@ -37,6 +40,8 @@ function changeSlide(slideNum){
 			break;
 	}
 	
+	currentSlide.style.opacity = 0;
+		
 	setTimeout(() => {
 		
 		currentSlide.style.display = 'none';
