@@ -1,27 +1,55 @@
 document.getElementById('logo_left').addEventListener('contextmenu', event=>event.preventDefault());
 
-const slide1 = document.getElementById('slide_1');
-const slide2 = document.getElementById('slide_2');
-const timer = 125;
+const left_arrow = document.getElementById('left_arrow');
+const right_arrow = document.getElementById('right_arrow');
+const bubbles 		= document.getElementById('bubbles').children;
+let		currentSlideNum = 1;
 
-slide1.addEventListener('transitionstart', ()=>{
+left_arrow.addEventListener('click', ()=>{changeSlide('--')});
+right_arrow.addEventListener('click', ()=>{changeSlide('++')});
+for(let i = 0; i < bubbles.length; i++){
 
+	bubbles[i].addEventListener('click', ()=>{changeSlide(i)})
+}
+
+function changeSlide(slideNum){
+
+	let		newSlide;
+	let		newBubble;
+	const transition 		= 100;
+	const currentSlide	= document.getElementById(`slide_${currentSlideNum}`);
+	const currentBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+	
+	currentSlide.style.opacity = 0;
+
+	switch (slideNum){
+		case '++':
+			newSlide	= document.getElementById(`slide_${++currentSlideNum}`);
+			newBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+			break;
+		case '--':
+			newSlide	= document.getElementById(`slide_${--currentSlideNum}`);
+			newBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+			break;
+		default:
+			newSlide				= document.getElementById(`slide_${++slideNum}`);
+			newBubble				= document.getElementById(`bubble_${slideNum}`);
+			currentSlideNum	= slideNum
+			break;
+	}
+	
 	setTimeout(() => {
 		
-		slide1.style.display = 'none';
-		slide2.style.display = 'grid';
+		currentSlide.style.display = 'none';
+		newSlide.style.display = 'block';
+		
+		currentBubble.style.color = '#777';
+		newBubble.style.color = 'white';
 
 		setTimeout(() => {
 			
-			slide2.style.opacity = 1;
-		}, timer);
-	}, timer);
-	
-});
+			newSlide.style.opacity = 1;
+		}, transition);
+	}, transition);
 
-
-
-setTimeout(() => {
-	
-	slide1.style.opacity = 0;
-}, 2000);
+}
