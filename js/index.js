@@ -8,7 +8,6 @@ let		currentSlideNum = 1;
 left_arrow.addEventListener('click', ()=>{changeSlide('--')});
 right_arrow.addEventListener('click', ()=>{changeSlide('++')});
 for(let i = 0; i < bubbles.length; i++){
-
 	bubbles[i].addEventListener('click', ()=>{changeSlide(i)})
 }
 
@@ -24,12 +23,12 @@ function changeSlide(slideNum){
 
 	switch (slideNum){
 		case '++':
-			newSlide	= document.getElementById(`slide_${++currentSlideNum}`);
-			newBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+			newSlide				= document.getElementById(`slide_${++currentSlideNum}`);
+			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
 			break;
 		case '--':
-			newSlide	= document.getElementById(`slide_${--currentSlideNum}`);
-			newBubble	= document.getElementById(`bubble_${currentSlideNum}`);
+			newSlide				= document.getElementById(`slide_${--currentSlideNum}`);
+			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
 			break;
 		default:
 			newSlide				= document.getElementById(`slide_${++slideNum}`);
