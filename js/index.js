@@ -20,11 +20,9 @@ function changeSlide(slideNum){
 	const currentBubble	= document.getElementById(`bubble_${currentSlideNum}`);
 	if((slideNum + 1) === currentSlideNum)return;
 	
-	
-	
 	switch (slideNum){
 		case '++':
-			if((currentSlideNum + 1) > 3)return;
+			if((currentSlideNum + 1) > 4)return;
 			newSlide				= document.getElementById(`slide_${++currentSlideNum}`);
 			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
 			break;
