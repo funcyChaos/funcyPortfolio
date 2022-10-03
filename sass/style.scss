@@ -32,7 +32,6 @@ body{
 	
 	background-color: black;
 	color: white;
-	min-height: 100%;
 	
 	a{
 		
@@ -41,9 +40,9 @@ body{
 	}
 }
 
-$headerHeight: 150px;
-
 .header{
+	
+	$headerHeight: 150px;
 
 	display: grid;
 
@@ -80,6 +79,13 @@ $headerHeight: 150px;
 
 		i{cursor: pointer;}
 	}
+
+	@media (max-width: 450px){
+
+		// $headerHeight: 80px;
+		grid-template-rows: auto;
+		.left img{height: 80px;}
+	}
 }
 
 .content{
@@ -87,18 +93,31 @@ $headerHeight: 150px;
 	display: grid;
 
 	grid-template-columns: 1fr 2fr 3fr 1fr;
-	grid-template-rows: 3fr 1fr;
+	grid-template-rows: auto 2fr;
 	grid-template-areas: 
-		". cLeft cRight ."
-		". cLeft cbRight ."
+		". exp car ."
+		". exp car ."
 	;
 
+	@media (max-width: 800px){
+		
+		grid-template-areas:
+			". exp exp ."
+			". car car ."
+		;
+	}
+
 	padding-top: 2rem;
-	min-height: calc(100vh - $headerHeight);
 
-	.left{
+	.experience{
 
-		grid-area: cLeft;
+		grid-area: exp;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@media(max-width:550px){justify-content:center;}
+		gap: 0 20px;
 
 		.text-wrapper{
 
@@ -108,9 +127,9 @@ $headerHeight: 150px;
 		}
 	}
 
-	.right{
+	.carousel{
 
-		grid-area: cRight;
+		grid-area: car;
 
 		min-width: 0;
 		min-height: 0;

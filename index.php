@@ -24,7 +24,7 @@
 	</div>
 	
 	<div class="content">
-		<div class="left">
+		<div class="experience">
 			<div class="text-wrapper">
 				<h3>Heavy Experience</h3>
 				<ul>
@@ -53,7 +53,7 @@
 			</div>
 		</div>
 
-		<div class="right">
+		<div class="carousel">
 			<div class="site-slide active" id="slide_1">
 				<div class="text-wrapper">
 					<h3>Wordpress Blog Theme</h3>
