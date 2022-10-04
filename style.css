@@ -76,6 +76,7 @@ body a {
 
 .content {
   display: grid;
+  column-gap: 2rem;
   grid-template-columns: 1fr 2fr 3fr 1fr;
   grid-template-rows: auto 2fr;
   grid-template-areas: ". exp car ." ". exp car .";
