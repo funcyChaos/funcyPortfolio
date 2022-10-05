@@ -37,40 +37,53 @@ body a {
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 150px;
-  grid-template-areas: "hLeft hMid hRight";
-}
-.header .left, .header .mid, .header .right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.header .left {
-  grid-area: hLeft;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: "logo title menu" "logo title menu";
   padding-top: 10px;
 }
-.header .left img {
+.header .logo, .header .title, .header .menu-button, .header .menu {
+  display: flex;
+}
+.header .logo {
+  grid-area: logo;
+  justify-content: center;
+}
+.header .logo img {
   height: 100px;
 }
-.header .mid {
-  grid-area: hMid;
+.header .title {
+  grid-area: title;
+  justify-content: center;
+  align-items: center;
 }
-.header .mid h1 {
+.header .title h1 {
   font-size: xx-large;
 }
-.header .right {
-  grid-area: hRight;
+.header .menu-button {
+  grid-area: menu;
+  padding-top: 10px;
+  padding-right: 20px;
+  justify-content: center;
+  align-items: center;
 }
-.header .right i {
+.header .menu-button i {
   cursor: pointer;
 }
-@media (max-width: 450px) {
+.header .menu {
+  display: none;
+  grid-area: title;
+  justify-content: flex-end;
+  justify-content: space-around;
+  align-items: center;
+  background-color: black;
+}
+@media (max-width: 500px) {
   .header {
-    grid-template-rows: auto;
+    grid-template-areas: "logo logo logo" "title title menu";
   }
-  .header .left img {
-    height: 80px;
+  .header .logo img {
+    height: 50px;
   }
 }
 

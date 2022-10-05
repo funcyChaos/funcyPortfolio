@@ -9,19 +9,24 @@
 	<?php wp_head();?>
 </head>
 <body>
-	<div class="header">
-		<div class="left" id="logo_left">
+	<nav class="header">
+		<div class="logo" id="logo_box">
 			<img src="<?php echo get_theme_file_uri('/img/funcyLogo-sm.png');?>" alt="funcy logo">
 		</div>
-		<div class="right">
+		<div class="title">
 			<a href="">
 				<h1>funcyChaos</h1>
 			</a>
 		</div>
-		<!-- <div class="right">
-			<i class="fas fa-bars fa-lg" id="dropdown_bars"></i>
-		</div> -->
-	</div>
+		<div class="menu-button">
+			<i class="fas fa-bars fa-lg" id="nav_button"></i>
+		</div>
+
+		<div class="menu" id="nav_menu">
+			<a href="">About Me</a>
+			<a href="">Resume</a>
+		</div>
+	</nav>
 	
 	<div class="content">
 		<div class="experience">

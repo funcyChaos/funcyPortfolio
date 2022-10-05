@@ -1,9 +1,23 @@
-document.getElementById('logo_left').addEventListener('contextmenu', event=>event.preventDefault());
+document.getElementById('logo_box').addEventListener('contextmenu', event=>event.preventDefault());
 
-const left_arrow = document.getElementById('left_arrow');
-const right_arrow = document.getElementById('right_arrow');
-const bubbles 		= document.getElementById('bubbles').children;
+const	nav_button			= document.getElementById('nav_button');
+const	nav_menu				= document.getElementById('nav_menu');
+let		nav_display			= false;
+
+const left_arrow 			= document.getElementById('left_arrow');
+const right_arrow 		= document.getElementById('right_arrow');
+const bubbles 				= document.getElementById('bubbles').children;
 let		currentSlideNum = 1;
+
+nav_button.addEventListener('click', ()=>{
+	if(!nav_display){
+		nav_menu.style.display = 'flex';
+		nav_display						 = true;
+	}else{
+		nav_menu.style.display = 'none';
+		nav_display						 = false;
+	}
+});
 
 left_arrow.addEventListener('click', ()=>{changeSlide('--')});
 right_arrow.addEventListener('click', ()=>{changeSlide('++')});
@@ -12,7 +26,6 @@ for(let i = 0; i < bubbles.length; i++){
 }
 
 function changeSlide(slideNum){
-
 	let		newSlide;
 	let		newBubble;
 	const transition 		= 100;
@@ -41,7 +54,6 @@ function changeSlide(slideNum){
 	currentSlide.style.opacity = 0;
 		
 	setTimeout(() => {
-		
 		currentSlide.style.display = 'none';
 		newSlide.style.display = 'block';
 		
@@ -49,7 +61,6 @@ function changeSlide(slideNum){
 		newBubble.style.color = 'white';
 
 		setTimeout(() => {
-			
 			newSlide.style.opacity = 1;
 		}, transition);
 	}, transition);

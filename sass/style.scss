@@ -41,50 +41,80 @@ body{
 }
 
 .header{
-	
-	$headerHeight: 150px;
 
 	display: grid;
 
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: $headerHeight;
-	grid-template-areas: "hLeft hMid hRight";
+	grid-template-columns: 2fr 3fr 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		"logo title menu"
+		"logo title menu"
+	;
 
-	.left,.mid,.right{
+	padding-top: 10px;
+
+	.logo,.title,.menu-button,.menu{
 
 		display: flex;
-		align-items: center;
-		justify-content: center;
 	}
 
-	.left{
+	.logo{
 
-		grid-area: hLeft;
+		grid-area: logo;
 
-		padding-top: 10px;
+		justify-content: center;
 
 		img{height: 100px;}
 	}
 
-	.mid{
+	.title{
 
-		grid-area: hMid;
+		grid-area: title;
+
+		justify-content: center;
+		align-items: center;
 
 		h1{font-size: xx-large;}
+
 	}
 
-	.right{
+	.menu-button{
 
-		grid-area: hRight;
+		grid-area: menu;
+
+		padding-top: 10px;
+		padding-right: 20px;
+
+		justify-content: center;
+		align-items: center;
 
 		i{cursor: pointer;}
 	}
 
-	@media (max-width: 450px){
+	.menu{
 
-		// $headerHeight: 80px;
-		grid-template-rows: auto;
-		.left img{height: 80px;}
+		display: none;
+
+		grid-area: title;
+
+		justify-content: flex-end;
+		justify-content: space-around;
+		align-items: center;
+
+		background-color: black;
+	}
+
+	@media(max-width:500px){
+
+		grid-template-areas:
+			"logo logo logo"
+			"title title menu"
+		;
+
+		.logo{
+
+			img{height: 50px;}
+		} 
 	}
 }
 
