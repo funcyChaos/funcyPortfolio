@@ -31,6 +31,7 @@
 }
 .grid-container nav .logo {
   grid-area: logo;
+  cursor: pointer;
 }
 .grid-container nav .logo img {
   height: 100px;
@@ -44,6 +45,7 @@
   justify-content: space-around;
   background-color: black;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 .grid-container nav .menu-btn {
   grid-area: menu;
@@ -66,10 +68,10 @@
   height: 20rem;
   border-radius: 0.5rem;
 }
-.grid-container .content .half-col .about-me {
+.grid-container .content .half-col .intro {
   font-size: 1.3rem;
 }
-.grid-container .skills {
+.grid-container .skills, .grid-container .portfolio, .grid-container .about-me {
   display: none;
 }
 .grid-container footer {

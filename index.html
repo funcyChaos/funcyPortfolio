@@ -19,29 +19,27 @@
 			<div class="title" id="title_box">
 				<h1>funcyChaos</h1>
 			</div>
-			<div class="title menu" id="menu_box" disp=false>
-				<!-- <a href="">about me</a>
-				<a href="">skills</a>
-				<a href="">portfolio</a> -->
-				<h1 id="btn_sklz">skills</h1>
-				<h1 id="btn_abt_me">about me</h1>
-				<h1 id="btn_port">portfolio</h1>
+			<div class="title menu" id="menu_box" data-disp=false>
+				<h1 id="btn_sklz" data-hash="skills" rando="rando">skills</h1>
+				<h1 id="btn_abt_me" data-hash="about-me">about me</h1>
+				<h1 id="btn_port" data-hash="portfolio">portfolio</h1>
 			</div>
 			<div class="menu-btn">
 				<i class="fas fa-bars fa-lg" id="menu_btn"></i>
 			</div>
 		</nav>
 
-		<div class="content home" id="home_box">
+		<div class="content home" id="home_box" disp=true>
 			<div class="half-col">
 				<img src="./img/profile.jpg" alt="profile pic">
 			</div>
 			<div class="half-col">
-				<div class="about-me">
+				<div class="intro">
 					<p>Hi, I'm Austin!
 					I'm a full stack WordPress developer with 2 years of experience involving theme and plugin development.</p>
 					<br>
 					<p>I also have a hobbyist background in embedded C as well as C++</p>
+					<p>inovative</p>
 				</div>
 			</div>
 		</div>
@@ -73,6 +71,14 @@
 					<li>MongoDB</li>
 				</ul>
 			</div>
+		</div>
+
+		<div class="content portfolio" id="port_box" disp=false>
+			<h1>portfolio</h1>
+		</div>
+
+		<div class="content about-me" id="about_box" disp=false>
+			<h1>about me</h1>
 		</div>
 
 		<footer>

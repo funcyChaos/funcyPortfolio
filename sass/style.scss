@@ -38,6 +38,7 @@
 
 		.logo{
 			grid-area: logo;
+			cursor: pointer;
 			img{height: 100px;}
 		}
 
@@ -51,6 +52,7 @@
 			justify-content: space-around;
 			background-color: black;
 			font-size: 1.5rem;
+			cursor: pointer;
 		}
 
 		.menu-btn{
@@ -76,13 +78,13 @@
 				border-radius: .5rem;
 			}
 
-			.about-me{
+			.intro{
 				font-size: 1.3rem;
 			}
 		}
 	}
 
-	.skills{
+	.skills,.portfolio,.about-me{
 		display: none;
 	}
 
