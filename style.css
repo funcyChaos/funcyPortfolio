@@ -5,13 +5,13 @@
 }
 
 .grid-container {
-  background-color: black;
-  color: white;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   grid-template-rows: 150px 1fr 150px;
   grid-template-areas: "header header header" ". content ." "footer footer footer";
+  background-color: black;
+  color: white;
 }
 .grid-container a {
   color: white;
@@ -24,7 +24,7 @@
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-areas: "logo title menu" "logo title menu";
 }
-.grid-container nav .logo, .grid-container nav .title, .grid-container nav .menu {
+.grid-container nav .logo, .grid-container nav .title, .grid-container nav .menu-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +40,15 @@
   font-size: 3rem;
 }
 .grid-container nav .menu {
+  display: none;
+  justify-content: space-around;
+  background-color: black;
+}
+.grid-container nav .menu-btn {
   grid-area: menu;
+}
+.grid-container nav .menu-btn i {
+  cursor: pointer;
 }
 .grid-container .content {
   grid-area: content;
@@ -57,10 +65,14 @@
   height: 20rem;
   border-radius: 0.5rem;
 }
+.grid-container .content .column .about-me {
+  font-size: 1.3rem;
+}
 .grid-container footer {
   grid-area: footer;
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
   font-size: 5rem;
 }
 

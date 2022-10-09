@@ -1,17 +1,11 @@
 *{
-	
 	margin: 0;
 	padding: 0;
 	font-family: 'JetBrains Mono', monospace;
 }
 
 .grid-container{
-
-	background-color: black;
-	color: white;
-
 	min-height: 100vh;
-
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr;
 	grid-template-rows: 150px 1fr 150px;
@@ -19,10 +13,12 @@
 		"header header header"
 		". content ."
 		"footer footer footer"
-	;
-	
-	a{
+		;
 		
+	background-color: black;
+	color: white;
+
+	a{
 		color: white;
 		text-decoration: none;
 	}
@@ -34,7 +30,7 @@
 		grid-template-columns: 1fr 6fr 1fr;
 		grid-template-areas: "logo title menu""logo title menu";
 
-		.logo,.title,.menu{
+		.logo,.title,.menu-btn{
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -51,12 +47,18 @@
 		}
 
 		.menu{
+			display: none;
+			justify-content: space-around;
+			background-color: black;
+		}
+
+		.menu-btn{
 			grid-area: menu;
+			i{cursor: pointer;}
 		}
 	}
 
 	.content{
-
 		grid-area: content;
 
 		display: flex;
@@ -72,6 +74,10 @@
 				height: 20rem;
 				border-radius: .5rem;
 			}
+
+			.about-me{
+				font-size: 1.3rem;
+			}
 		}
 	}
 
@@ -79,6 +85,7 @@
 		grid-area: footer;
 		display: flex;
 		justify-content: space-around;
+		align-items: flex-end;
 		font-size: 5rem;
 	}
 }
