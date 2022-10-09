@@ -1,11 +1,11 @@
-const logo				=	document.getElementById('logo_box');
-const menu_btn		= document.getElementById('menu_btn');
-const menu_items	= document.getElementById('menu_box').children;
+const logo					=	document.getElementById('logo_box');
+const menu_btn			= document.getElementById('menu_btn');
+const menu_items		= document.getElementById('menu_box').children;
 
-const home_box	= document.getElementById('home_box')
-const skills_box	= document.getElementById('skills_box');
-const port_box	= document.getElementById('port_box');
-const about_box	= document.getElementById('about_box');
+const home_box			= document.getElementById('home_box')
+const skills_box		= document.getElementById('skills_box');
+const port_box			= document.getElementById('port_box');
+const about_box			= document.getElementById('about_box');
 let		current_page	= home_box;
 
 router(window.location.hash);
@@ -24,10 +24,6 @@ menu_btn.addEventListener('click', ()=>{
 
 for(const item of menu_items){
 	item.addEventListener('click', ()=>{
-		// window.location.hash	= 'skills';
-		// console.log(item.hash)
-		// console.log(item.rando);
-		// console.log(item.dataset.hash)
 		window.location.hash	= item.dataset.hash;
 	});
 }
@@ -38,27 +34,25 @@ window.addEventListener('hashchange',()=>{
 });
 
 function router(hash){
+	let new_box;
 	switch(hash){
 		case '#skills':
 			current_page.style.display	= 'none';
-			skills_box.style.display		= 'flex';
-			current_page								= skills_box;
+			new_box	= skills_box;
 			break;
 		case '#portfolio':
 			current_page.style.display	= 'none';
-			port_box.style.display		= 'flex';
-			current_page								= port_box;
+			new_box	= port_box;
 			break;
 		case '#about-me':
 			current_page.style.display	= 'none';
-			about_box.style.display		= 'flex';
-			current_page								= about_box;
+			new_box	= about_box;
 			break;
 		default:
-			console.log('home');
 			current_page.style.display	= 'none';
-			home_box.style.display			= 'flex';
-			current_page								= home_box;
+			new_box	= home_box;
 			break;
 	}
+	new_box.style.display	= 'flex'
+	current_page					= new_box
 }
