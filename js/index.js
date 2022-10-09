@@ -5,9 +5,9 @@ document.getElementById('logo_box').addEventListener('contextmenu', event=>event
 // const title_box				= document.getElementById('title_box');
 // let		nav_display			= false;
 const menu_btn	= document.getElementById('menu_btn');
-const title_box	= document.getElementById('title_box');
+// const title_box	= document.getElementById('title_box');
 const menu_box	= document.getElementById('menu_box');
-let		disp_nav	= false;
+const skils_box	= document.getElementById('skills_box');
 
 
 // const left_arrow 			= document.getElementById('left_arrow');
@@ -16,13 +16,18 @@ let		disp_nav	= false;
 // let		currentSlideNum = 1;
 
 menu_btn.addEventListener('click', ()=>{
-	if(!disp_nav){
+	if(!menu_box.disp){
 		menu_box.style.display	= 'flex';
-		disp_nav								= true;
+		menu_box.disp						= true;
 	}else{
 		menu_box.style.display	= 'none';
-		disp_nav								= false;
+		menu_box.disp						= false;
 	}
+});
+
+document.getElementById('btn_sklz').addEventListener('click',()=>{
+	document.getElementById('home_box').style.display = 'none';
+	skils_box.style.display	= 'flex';
 });
 
 // nav_button.addEventListener('click', ()=>{

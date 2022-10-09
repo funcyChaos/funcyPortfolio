@@ -43,6 +43,7 @@
   display: none;
   justify-content: space-around;
   background-color: black;
+  font-size: 1.5rem;
 }
 .grid-container nav .menu-btn {
   grid-area: menu;
@@ -55,18 +56,21 @@
   display: flex;
   gap: 0 1rem;
 }
-.grid-container .content .column {
+.grid-container .content .half-col {
   flex: 0 1 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.grid-container .content .column img {
+.grid-container .content .half-col img {
   height: 20rem;
   border-radius: 0.5rem;
 }
-.grid-container .content .column .about-me {
+.grid-container .content .half-col .about-me {
   font-size: 1.3rem;
+}
+.grid-container .skills {
+  display: none;
 }
 .grid-container footer {
   grid-area: footer;
