@@ -2,6 +2,7 @@ document.getElementById('logo_box').addEventListener('contextmenu', event=>event
 
 const	nav_button			= document.getElementById('nav_button');
 const	nav_menu				= document.getElementById('nav_menu');
+const title_box				= document.getElementById('title_box');
 let		nav_display			= false;
 
 const left_arrow 			= document.getElementById('left_arrow');
@@ -11,11 +12,13 @@ let		currentSlideNum = 1;
 
 nav_button.addEventListener('click', ()=>{
 	if(!nav_display){
-		nav_menu.style.display = 'flex';
-		nav_display						 = true;
+		nav_menu.style.display	= 'flex';
+		// title_box.style.display	= 'none'
+		nav_display							= true;
 	}else{
-		nav_menu.style.display = 'none';
-		nav_display						 = false;
+		nav_menu.style.display	= 'none';
+		// title_box.style.display	= 'flex'
+		nav_display							= false;
 	}
 });
 
