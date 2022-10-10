@@ -13,6 +13,11 @@
   background-color: black;
   color: white;
 }
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-rows: 200px 1fr 150px;
+  }
+}
 .grid-container a {
   color: white;
   text-decoration: none;
@@ -61,6 +66,38 @@
 .grid-container nav .menu-btn i:hover {
   color: blue;
 }
+@media (max-width: 900px) {
+  .grid-container nav {
+    grid-template-areas: "logo title title" "menu menu menu";
+  }
+  .grid-container nav .title {
+    font-size: 1.5rem;
+  }
+  .grid-container nav .menu {
+    grid-area: menu;
+    display: flex;
+    font-size: 1rem;
+  }
+  .grid-container nav .menu-btn {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .grid-container nav {
+    grid-template-areas: "logo title title" "menu menu menu";
+  }
+  .grid-container nav .title {
+    font-size: 1rem;
+  }
+  .grid-container nav .menu {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 400px) {
+  .grid-container nav .logo img {
+    height: 60px;
+  }
+}
 .grid-container .content {
   grid-area: content;
   display: flex;
@@ -76,8 +113,18 @@
   height: 20rem;
   border-radius: 0.5rem;
 }
+@media (max-width: 500px) {
+  .grid-container .content .half-col img {
+    height: 10rem;
+  }
+}
 .grid-container .content .half-col .intro {
   font-size: 1.3rem;
+}
+@media (max-width: 900px) {
+  .grid-container .content {
+    flex-direction: column;
+  }
 }
 .grid-container .about-me, .grid-container .skills, .grid-container .portfolio {
   display: none;
@@ -93,13 +140,29 @@
   justify-content: space-around;
   align-items: center;
 }
+.grid-container .skills ul {
+  margin-bottom: 1rem;
+}
+.grid-container .skills .column {
+  display: none;
+}
+@media (max-width: 900px) {
+  .grid-container .skills .hide {
+    display: none;
+  }
+  .grid-container .skills .column {
+    display: block;
+  }
+}
 .grid-container .portfolio {
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 .grid-container .portfolio .site {
-  flex: 1 0 300px;
   aspect-ratio: 1/1;
+}
+.grid-container .portfolio .site img {
+  width: 100%;
 }
 .grid-container .portfolio .site .title {
   margin-bottom: 0.5rem;
@@ -107,15 +170,17 @@
 .grid-container .portfolio .site .title h3 {
   margin-bottom: 0;
 }
-.grid-container .portfolio .site img {
-  width: 100%;
-}
 .grid-container footer {
   grid-area: footer;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   font-size: 5rem;
+}
+@media (max-width: 400px) {
+  .grid-container footer {
+    font-size: 3rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

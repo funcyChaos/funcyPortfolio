@@ -8,6 +8,7 @@
 	<title>funcyChaos.com</title>
 
 	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./css/bootstrap-grid.css">
 </head>
 
 <body>
@@ -44,13 +45,40 @@
 		</div>
 
 		<div class="content about-me" id="about_box" disp=false>
-			<!-- <h1>About Me</h1> -->
 			<p>I started programming in junior high, using the language B.A.S.I.C. and soon wanted to program video games. When I turned 18 I started working in a machine shop and I didn't stop for 10 years. Then I got bored with machining and decided to pick up where I left off with programming. I learned Assembly and C++ to work towards a foundation for video game development. And soon after started an apprenticeship with Bitwise studying WordPress development as well as developing themes with a team for multiple clients.</p>
 			<p>I really feel at home with lower level languages, and I have come to really enjoy embedded C for personal projects. And when I'm not focused on hardware projects in my free time, I love working on my drift car (although sometimes those are the same thing &#x1F61C;)</p>
 		</div>
 
 		<div class="content skills" id="skills_box" disp=false>
-			<div class="text-wrapper">
+			<div class="column">
+				<div class="text-wrapper">
+					<h3>Advanced</h3>
+					<ul>
+						<li>Wordpress Development</li>
+						<li>PHP</li>
+						<li>HTML/CSS</li>
+						<li>Javascript</li>
+					</ul>
+				</div>
+				<div class="text-wrapper">
+					<h3>Intermediate</h3>
+					<ul>
+						<li>Embedded C</li>
+						<li>Assembly</li>
+						<li>C++</li>
+					</ul>
+				</div>
+				<div class="text-wrapper">
+					<h3>Beginner</h3>
+					<ul>
+						<li>REACT</li>
+						<li>Python</li>
+						<li>Node</li>
+						<li>MongoDB</li>
+					</ul>
+				</div>
+			</div>
+			<div class="text-wrapper hide">
 				<h3>Advanced</h3>
 				<ul>
 					<li>Wordpress Development</li>
@@ -59,7 +87,7 @@
 					<li>Javascript</li>
 				</ul>
 			</div>
-			<div class="text-wrapper">
+			<div class="text-wrapper hide">
 				<h3>Intermediate</h3>
 				<ul>
 					<li>Embedded C</li>
@@ -67,7 +95,7 @@
 					<li>C++</li>
 				</ul>
 			</div>
-			<div class="text-wrapper">
+			<div class="text-wrapper hide">
 				<h3>Beginner</h3>
 				<ul>
 					<li>REACT</li>
@@ -78,8 +106,63 @@
 			</div>
 		</div>
 
-		<div class="content portfolio" id="port_box" disp=false>
-			<div class="site">
+		<div class="content portfolio row" id="port_box" disp=false>
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>Static Web Site</h3>
+					<a href="https://fresno-swing-dance-fwgtl.ondigitalocean.app/" target="_blank">Fresno Swing Dance</a>
+				</div>
+				<a href="https://fresno-swing-dance-fwgtl.ondigitalocean.app/" target="_blank">
+					<img src="./img/fsd-screenshot.png" alt="">
+				</a>
+			</div>
+			
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>WordPress eCommerce Theme</h3>
+					<a href="https://funcychaos.github.io/funcyStore/single-product.html" target="_blank">funcyStore</a>
+				</div>
+				<a href="https://funcychaos.github.io/funcyStore/single-product.html" target="_blank">
+					<img src="./img/funcy-store-screenshot.png" alt="">
+				</a>
+			</div>
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>WordPress Blog Theme</h3>
+					<a href="https://a-reilly.dev" target="_blank">a-reilly.dev</a>
+				</div>
+				<a href="https://a-reilly.dev" target="_blank">
+					<img src="./img/screenshot-a-reilly.dev.png" alt="">
+				</a>
+			</div>
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>WordPress Blog Theme</h3>
+					<a href="https://a-reilly.dev" target="_blank">a-reilly.dev</a>
+				</div>
+				<a href="https://a-reilly.dev" target="_blank">
+					<img src="./img/screenshot-a-reilly.dev.png" alt="">
+				</a>
+			</div>
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>React Landing Page</h3>
+					<a href="https://funcychaos.github.io/" target="_blank">funcychaos.github.io</a>
+				</div>
+				<a href="https://funcychaos.github.io/" target="_blank">
+					<img src="./img/the-game.png" alt="">
+				</a>
+			</div>
+			<div class="col-lg-5 site">
+				<div class="title">
+					<h3>WordPress AJAX Plugin</h3>
+					<a href="https://github.com/funcyChaos/count_slaps" target="_blank">Github Repository</a>
+				</div>
+				<a href="https://github.com/funcyChaos/count_slaps" target="_blank">
+					<img src="./img/slap-fight.png" alt="">
+				</a>
+			</div>
+			<!-- <div class="site">
 				<div class="title">
 					<h3>Static Web Site</h3>
 					<a href="https://fresno-swing-dance-fwgtl.ondigitalocean.app/" target="_blank">Fresno Swing Dance</a>
@@ -89,41 +172,17 @@
 				</a>
 			</div>
 			<div class="site">
-				<div class="title">
-					<h3>WordPress eCommerce Theme</h3>
-					<a href="https://funcychaos.github.io/funcyStore/single-product.html" target="_blank">funcyStore</a>
-				</div>
-				<a href="https://funcychaos.github.io/funcyStore/single-product.html" target="_blank">
-					<img src="./img/funcy-store-screenshot.png" alt="">
-				</a>
+				
 			</div>
 			<div class="site">
-				<div class="title">
-					<h3>WordPress Blog Theme</h3>
-					<a href="https://a-reilly.dev" target="_blank">a-reilly.dev</a>
-				</div>
-				<a href="https://a-reilly.dev" target="_blank">
-					<img src="./img/screenshot-a-reilly.dev.png" alt="">
-				</a>
+
 			</div>
 			<div class="site">
-				<div class="title">
-					<h3>React Landing Page</h3>
-					<a href="https://funcychaos.github.io/" target="_blank">funcychaos.github.io</a>
-				</div>
-				<a href="https://funcychaos.github.io/" target="_blank">
-					<img src="./img/the-game.png" alt="">
-				</a>
+
 			</div>
 			<div class="site">
-				<div class="title">
-					<h3>WordPress AJAX Plugin</h3>
-					<a href="https://github.com/funcyChaos/count_slaps" target="_blank">Github Repository</a>
-				</div>
-				<a href="https://github.com/funcyChaos/count_slaps" target="_blank">
-					<img src="./img/slap-fight.png" alt="">
-				</a>
-			</div>
+
+			</div> -->
 		</div>
 
 		<footer>
