@@ -8,7 +8,13 @@ const port_box			= document.getElementById('port_box');
 const about_box			= document.getElementById('about_box');
 let		current_page	= home_box;
 
+if(window.location.hash){
+	menu_box.style.display	= 'flex';
+	menu_box.dataset.disp		= true;
+}
+
 router(window.location.hash);
+
 logo.addEventListener('contextmenu', event=>event.preventDefault());
 logo.addEventListener('click',()=>window.location.hash = '');
 
@@ -29,27 +35,30 @@ for(const item of menu_items){
 }
 
 window.addEventListener('hashchange',()=>{
-	console.log(window.location.hash);
 	router(window.location.hash);
 });
 
 function router(hash){
+	for(const item of menu_items){
+		if(!(hash == item.dataset.hash)){
+			item.style.color = 'white';
+		}else{
+			item.style.color = 'blue'
+		}
+	}
 	let new_box;
+	current_page.style.display	= 'none';
 	switch(hash){
 		case '#skills':
-			current_page.style.display	= 'none';
 			new_box	= skills_box;
 			break;
 		case '#portfolio':
-			current_page.style.display	= 'none';
 			new_box	= port_box;
 			break;
 		case '#about-me':
-			current_page.style.display	= 'none';
 			new_box	= about_box;
 			break;
 		default:
-			current_page.style.display	= 'none';
 			new_box	= home_box;
 			break;
 	}

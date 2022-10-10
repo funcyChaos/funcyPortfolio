@@ -8,7 +8,7 @@
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  grid-template-rows: 150px 1fr 150px;
+  grid-template-rows: 120px 1fr 150px;
   grid-template-areas: "header header header" ". content ." "footer footer footer";
   background-color: black;
   color: white;
@@ -45,7 +45,12 @@
   justify-content: space-around;
   background-color: black;
   font-size: 1.5rem;
+}
+.grid-container nav .menu h1 {
   cursor: pointer;
+}
+.grid-container nav .menu .active {
+  color: blue;
 }
 .grid-container nav .menu-btn {
   grid-area: menu;
@@ -53,10 +58,13 @@
 .grid-container nav .menu-btn i {
   cursor: pointer;
 }
+.grid-container nav .menu-btn i:hover {
+  color: blue;
+}
 .grid-container .content {
   grid-area: content;
   display: flex;
-  gap: 0 1rem;
+  gap: 1rem;
 }
 .grid-container .content .half-col {
   flex: 0 1 50%;
@@ -71,8 +79,34 @@
 .grid-container .content .half-col .intro {
   font-size: 1.3rem;
 }
-.grid-container .skills, .grid-container .portfolio, .grid-container .about-me {
+.grid-container .about-me, .grid-container .skills, .grid-container .portfolio {
   display: none;
+}
+.grid-container .about-me h1, .grid-container .about-me h3, .grid-container .skills h1, .grid-container .skills h3, .grid-container .portfolio h1, .grid-container .portfolio h3 {
+  margin-bottom: 0.5rem;
+}
+.grid-container .about-me {
+  flex-direction: column;
+  justify-content: center;
+}
+.grid-container .skills {
+  justify-content: space-around;
+  align-items: center;
+}
+.grid-container .skills h3 {
+  margin-bottom: 0.5rem;
+}
+.grid-container .portfolio {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.grid-container .portfolio .site {
+  flex: 1 1 100px;
+  aspect-ratio: 1/1;
+  background-color: gray;
+}
+.grid-container .portfolio .site img {
+  width: 100%;
 }
 .grid-container footer {
   grid-area: footer;
