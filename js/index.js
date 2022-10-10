@@ -1,57 +1,67 @@
-document.getElementById('logo_left').addEventListener('contextmenu', event=>event.preventDefault());
+const logo					=	document.getElementById('logo_box');
+const menu_btn			= document.getElementById('menu_btn');
+const menu_items		= document.getElementById('menu_box').children;
 
-const left_arrow = document.getElementById('left_arrow');
-const right_arrow = document.getElementById('right_arrow');
-const bubbles 		= document.getElementById('bubbles').children;
-let		currentSlideNum = 1;
+const home_box			= document.getElementById('home_box')
+const skills_box		= document.getElementById('skills_box');
+const port_box			= document.getElementById('port_box');
+const about_box			= document.getElementById('about_box');
+let		current_page	= home_box;
 
-left_arrow.addEventListener('click', ()=>{changeSlide('--')});
-right_arrow.addEventListener('click', ()=>{changeSlide('++')});
-for(let i = 0; i < bubbles.length; i++){
-	bubbles[i].addEventListener('click', ()=>{changeSlide(i)})
+if(window.location.hash){
+	menu_box.style.display	= 'flex';
+	menu_box.dataset.disp		= true;
 }
 
-function changeSlide(slideNum){
+router(window.location.hash);
 
-	let		newSlide;
-	let		newBubble;
-	const transition 		= 100;
-	const currentSlide	= document.getElementById(`slide_${currentSlideNum}`);
-	const currentBubble	= document.getElementById(`bubble_${currentSlideNum}`);
-	if((slideNum + 1) === currentSlideNum)return;
-	
-	switch (slideNum){
-		case '++':
-			if((currentSlideNum + 1) > 4)return;
-			newSlide				= document.getElementById(`slide_${++currentSlideNum}`);
-			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
+logo.addEventListener('contextmenu', event=>event.preventDefault());
+logo.addEventListener('click',()=>window.location.hash = '');
+
+menu_btn.addEventListener('click', ()=>{
+	if(menu_box.dataset.disp == 'false'){
+		menu_box.style.display	= 'flex';
+		menu_box.dataset.disp		= true;
+	}else{
+		menu_box.style.display	= 'none';
+		menu_box.dataset.disp		= false;
+	}
+});
+
+for(const item of menu_items){
+	item.addEventListener('click', ()=>{
+		window.location.hash	= item.dataset.hash;
+	});
+}
+
+window.addEventListener('hashchange',()=>{
+	router(window.location.hash);
+});
+
+function router(hash){
+	for(const item of menu_items){
+		if(!(hash == item.dataset.hash)){
+			item.style.color = 'white';
+		}else{
+			item.style.color = 'blue'
+		}
+	}
+	let new_box;
+	current_page.style.display	= 'none';
+	switch(hash){
+		case '#skills':
+			new_box	= skills_box;
 			break;
-		case '--':
-			if((currentSlideNum - 1) < 1)return;
-			newSlide				= document.getElementById(`slide_${--currentSlideNum}`);
-			newBubble				= document.getElementById(`bubble_${currentSlideNum}`);
+		case '#portfolio':
+			new_box	= port_box;
+			break;
+		case '#about-me':
+			new_box	= about_box;
 			break;
 		default:
-			newSlide				= document.getElementById(`slide_${++slideNum}`);
-			newBubble				= document.getElementById(`bubble_${slideNum}`);
-			currentSlideNum	= slideNum
+			new_box	= home_box;
 			break;
 	}
-	
-	currentSlide.style.opacity = 0;
-		
-	setTimeout(() => {
-		
-		currentSlide.style.display = 'none';
-		newSlide.style.display = 'block';
-		
-		currentBubble.style.color = '#777';
-		newBubble.style.color = 'white';
-
-		setTimeout(() => {
-			
-			newSlide.style.opacity = 1;
-		}, transition);
-	}, transition);
-
+	new_box.style.display	= 'flex'
+	current_page					= new_box
 }

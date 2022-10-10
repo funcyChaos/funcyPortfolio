@@ -1,164 +1,121 @@
-/*!
-Theme Name: funcyPortfolio
-Theme URI: http://underscores.me/
-Author: funcyChaos
-Author URI: funcyChaos.com
-Description: Currently just a static page
-Version: 1.0.0
-Tested up to: 
-Requires PHP: 
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: funcyChaos
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned.
-
-alert-o-lite is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
-*/
 * {
   margin: 0;
   padding: 0;
   font-family: "JetBrains Mono", monospace;
 }
 
-body {
+.grid-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 120px 1fr 150px;
+  grid-template-areas: "header header header" ". content ." "footer footer footer";
   background-color: black;
   color: white;
 }
-body a {
+.grid-container a {
   color: white;
   text-decoration: none;
 }
-
-.header {
+.grid-container nav {
+  grid-area: header;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 150px;
-  grid-template-areas: "hLeft hMid hRight";
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-areas: "logo title menu" "logo title menu";
 }
-.header .left, .header .mid, .header .right {
+.grid-container nav .logo, .grid-container nav .title, .grid-container nav .menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container nav .logo {
+  grid-area: logo;
+  cursor: pointer;
+}
+.grid-container nav .logo img {
+  height: 100px;
+}
+.grid-container nav .title {
+  grid-area: title;
+  font-size: 3rem;
+}
+.grid-container nav .menu {
+  display: none;
+  justify-content: space-around;
+  background-color: black;
+  font-size: 1.5rem;
+}
+.grid-container nav .menu h1 {
+  cursor: pointer;
+}
+.grid-container nav .menu .active {
+  color: blue;
+}
+.grid-container nav .menu-btn {
+  grid-area: menu;
+}
+.grid-container nav .menu-btn i {
+  cursor: pointer;
+}
+.grid-container nav .menu-btn i:hover {
+  color: blue;
+}
+.grid-container .content {
+  grid-area: content;
+  display: flex;
+  gap: 1rem;
+}
+.grid-container .content .half-col {
+  flex: 0 1 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.header .left {
-  grid-area: hLeft;
-  padding-top: 10px;
+.grid-container .content .half-col img {
+  height: 20rem;
+  border-radius: 0.5rem;
 }
-.header .left img {
-  height: 100px;
+.grid-container .content .half-col .intro {
+  font-size: 1.3rem;
 }
-.header .mid {
-  grid-area: hMid;
+.grid-container .about-me, .grid-container .skills, .grid-container .portfolio {
+  display: none;
 }
-.header .mid h1 {
-  font-size: xx-large;
-}
-.header .right {
-  grid-area: hRight;
-}
-.header .right i {
-  cursor: pointer;
-}
-@media (max-width: 450px) {
-  .header {
-    grid-template-rows: auto;
-  }
-  .header .left img {
-    height: 80px;
-  }
-}
-
-.content {
-  display: grid;
-  column-gap: 2rem;
-  grid-template-columns: 1fr 2fr 3fr 1fr;
-  grid-template-rows: auto 2fr;
-  grid-template-areas: ". exp car ." ". exp car .";
-  padding-top: 2rem;
-}
-@media (max-width: 800px) {
-  .content {
-    grid-template-areas: ". exp exp ." ". car car .";
-  }
-}
-.content .experience {
-  grid-area: exp;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0 20px;
-}
-@media (max-width: 550px) {
-  .content .experience {
-    justify-content: center;
-  }
-}
-.content .experience .text-wrapper {
-  margin-bottom: 2rem;
-}
-.content .experience .text-wrapper h3 {
-  margin-bottom: 0.8rem;
-}
-.content .experience .text-wrapper li {
+.grid-container .about-me h1, .grid-container .about-me h3, .grid-container .skills h1, .grid-container .skills h3, .grid-container .portfolio h1, .grid-container .portfolio h3 {
   margin-bottom: 0.5rem;
 }
-.content .carousel {
-  grid-area: car;
-  min-width: 0;
-  min-height: 0;
+.grid-container .about-me {
+  flex-direction: column;
+  justify-content: center;
 }
-.content .carousel .site-slide {
-  transition: 0.2s;
-  display: none;
-  opacity: 0;
-}
-.content .carousel .site-slide .img-wrapper {
-  display: flex;
+.grid-container .skills {
+  justify-content: space-around;
   align-items: center;
-  aspect-ratio: 16/12;
-  background-color: #222;
-  border-radius: 1rem;
-  margin-top: 0.5rem;
 }
-.content .carousel .site-slide .img-wrapper img {
+.grid-container .portfolio {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.grid-container .portfolio .site {
+  flex: 1 0 300px;
+  aspect-ratio: 1/1;
+}
+.grid-container .portfolio .site .title {
+  margin-bottom: 0.5rem;
+}
+.grid-container .portfolio .site .title h3 {
+  margin-bottom: 0;
+}
+.grid-container .portfolio .site img {
   width: 100%;
 }
-.content .carousel .active {
-  display: block;
-  opacity: 1;
-}
-.content .carousel .selector {
-  flex-grow: 1;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bolder;
-  font-size: 1.5rem;
-}
-.content .carousel .selector .arrow {
-  cursor: pointer;
-}
-.content .carousel .selector .options {
-  display: flex;
-  color: #777;
-}
-.content .carousel .selector .options .fas {
-  cursor: pointer;
-}
-.content .carousel .selector .active {
-  color: white;
-}
-
-.footer {
-  font-size: 5rem;
-  padding: 2rem 0;
+.grid-container footer {
+  grid-area: footer;
   display: flex;
   justify-content: space-around;
+  align-items: flex-end;
+  font-size: 5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
