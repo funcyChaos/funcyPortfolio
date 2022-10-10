@@ -8,12 +8,12 @@ const port_box			= document.getElementById('port_box');
 const about_box			= document.getElementById('about_box');
 let		current_page	= home_box;
 
+router(window.location.hash);
+
 if(window.location.hash){
 	menu_box.style.display	= 'flex';
 	menu_box.dataset.disp		= true;
 }
-
-router(window.location.hash);
 
 logo.addEventListener('contextmenu', event=>event.preventDefault());
 logo.addEventListener('click',()=>window.location.hash = '');
