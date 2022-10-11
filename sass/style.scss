@@ -111,6 +111,7 @@ $sm-breakpoint: 400px;
 
 			.intro{
 				font-size: 1.3rem;
+				a{color: blue;}
 			}
 		}
 
@@ -147,7 +148,6 @@ $sm-breakpoint: 400px;
 		justify-content: center;
 
 		.site{
-			// border: purple dotted;
 			aspect-ratio: 1 / 1;
 
 			img{width: 100%;}

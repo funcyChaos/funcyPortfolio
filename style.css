@@ -121,6 +121,9 @@
 .grid-container .content .half-col .intro {
   font-size: 1.3rem;
 }
+.grid-container .content .half-col .intro a {
+  color: blue;
+}
 @media (max-width: 900px) {
   .grid-container .content {
     flex-direction: column;
