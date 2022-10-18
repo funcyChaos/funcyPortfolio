@@ -62,6 +62,7 @@
 }
 .grid-container nav .menu-btn i {
   cursor: pointer;
+  font-size: 3rem;
 }
 .grid-container nav .menu-btn i:hover {
   color: blue;

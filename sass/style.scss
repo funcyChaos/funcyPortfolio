@@ -66,7 +66,11 @@ $sm-breakpoint: 400px;
 
 		.menu-btn{
 			grid-area: menu;
-			i{cursor: pointer;&:hover{color: blue;}}
+			i{
+				cursor: pointer;
+				font-size: 3rem;
+				&:hover{color: blue;}
+			}
 		}
 
 		@media(max-width:$large-breakpoint){
